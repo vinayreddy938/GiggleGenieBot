@@ -4,6 +4,16 @@ const axios = require("axios");
 
 const TOKEN = process.env.TELEGRAM_TOKEN;
 const bot = new TelegramBot(TOKEN, { polling: true });
+bot.setMyCommands([
+    { command: "start", description: "Start the bot" },
+    { command: "help", description: "Show help menu" },
+    { command: "joke", description: "Get a random joke" },
+    { command: "darkjoke", description: "Get a dark humor joke" },
+    { command: "programmingjoke", description: "Get a programming joke" },
+    { command: "catfact", description: "Get a cat fact" },
+    { command: "quote", description: "Get an inspirational quote" },
+    { command: "insult", description: "Get a funny roast" }
+]);
 bot.on('message', (msg) => {
     const text = msg.text;
 
