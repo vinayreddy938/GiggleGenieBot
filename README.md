@@ -1,297 +1,180 @@
-🎉 GiggleGenieBot
+# 🎉 GiggleGenieBot
 
-A fun, interactive Telegram bot that delivers jokes, humor, quotes, cat facts & more — built with Node.js.
-👉 Telegram Bot Link: https://t.me/GiggleGenieBot
+A fun, interactive Telegram bot that delivers jokes, humor, quotes, cat facts & more — built with **Node.js**.
 
-📌 Overview
+👉 **Telegram Bot Link:** https://t.me/GiggleGenieBot
 
-GiggleGenieBot is a humor-powered Telegram bot designed to make your day brighter with random jokes, programming humor, dark jokes, cat facts, roasts, and inspirational quotes.
+---
 
-The bot uses long polling, so it works locally or on any free hosting service (Railway, Render, Replit) without needing webhooks or public URLs.
+## 📌 Overview
 
-✨ Features
-😂 Jokes & Humor
+**GiggleGenieBot** is a humor-powered Telegram bot designed to brighten your day with:
 
-/joke — Random clean joke
+- 😂 Random jokes  
+- 💻 Programming humor  
+- 😈 Dark jokes  
+- 🐱 Cat facts  
+- 🔥 Funny roasts  
+- 💬 Inspirational quotes  
 
-/darkjoke — Dark humor joke
+The bot uses **Telegram Long Polling**, so it works locally or on any free hosting service (Railway, Render, Replit) **without webhooks or public URLs**.
 
-/programmingjoke — Tech/developer jokes
+---
 
-🐾 Fun Facts
+## ✨ Features
 
-/catfact — Random cat fact
+### 😂 Jokes & Humor
+- `/joke` — Random clean joke  
+- `/darkjoke` — Dark humor joke  
+- `/programmingjoke` — Developer jokes  
 
-🔥 Fun Roasts
+### 🐾 Fun Facts
+- `/catfact` — Random cat fact  
 
-/insult — Lighthearted, funny roast
+### 🔥 Fun Roasts
+- `/insult` — Lighthearted, funny roast  
 
-💡 Inspiration
+### 💡 Inspiration
+- `/quote` — Random motivational quote  
 
-/quote — Random motivational quote
+### 🧭 Utility
+- `/start` — Welcome message  
+- `/help` — List of all commands  
 
-🧭 Bot Utility
+---
 
-/start — Welcome message
+## 🧠 How It Works
 
-/help — List of all commands
+GiggleGenieBot uses **Telegram Long Polling**:
 
-🧠 How It Works
+```
+1. User sends a command (/joke).
+2. Telegram stores the message on its servers.
+3. Bot continuously sends:
+      GET https://api.telegram.org/bot<token>/getUpdates
+4. Telegram responds with new messages (if any).
+5. Bot checks which command was sent.
+6. Bot calls required public API (joke, quote, fact…)
+7. Bot formats and sends the reply back to user.
+8. Repeat forever.
+```
 
-GiggleGenieBot uses Telegram Long Polling, which means:
+✔ No webhook required  
+✔ No domain or SSL required  
+✔ Works locally and in cloud  
+✔ Simple & reliable  
 
-1. User sends a command (/joke) to Telegram.
-2. Telegram stores this update on its servers.
-3. The bot continuously asks Telegram:
-      “Do I have any new messages?”
-4. Telegram responds with the update.
-5. The bot reads the command & calls relevant APIs.
-6. Bot sends a formatted reply back to the user.
-7. Loop continues forever.
+---
 
+## 🛠️ Tech Stack
 
-✔ No need for webhook
-✔ No domain or SSL required
-✔ Works locally or on cloud
-✔ Simple + reliable
+- **Node.js**
+- **node-telegram-bot-api**
+- **axios**
+- **dotenv**
 
-🛠️ Tech Stack
+### External APIs Used
+- Official Joke API  
+- JokeAPI.dev  
+- CatFact API  
+- EvilInsult API  
+- Quotable API  
 
-Node.js
+---
 
-node-telegram-bot-api — Telegram API wrapper
+## 📂 Project Structure
 
-axios — Fetching jokes/quotes/facts from public APIs
-
-dotenv — Loads environment variables from .env
-
-Joke and fact APIs:
-
-Official Joke API
-
-JokeAPI.dev
-
-CatFact API
-
-EvilInsult API
-
-Quotable API
-
-📂 Project Structure
+```
 GiggleGenieBot/
 │
-├── index.js          # Main bot logic
-├── package.json      
-├── .env              # Stores TELEGRAM_TOKEN (ignored by git)
-├── .gitignore        
-└── README.md         # Documentation
-
-⚙️ Setup & Installation
-1️⃣ Clone the Repo
-git clone https://github.com/your-username/GiggleGenieBot.git
-cd GiggleGenieBot
-
-2️⃣ Install Dependencies
-npm install
-
-3️⃣ Create .env File
-TELEGRAM_TOKEN=your_telegram_bot_token_here
-
-4️⃣ Run the Bot
-node index.js
-
-
-Open Telegram → find @GiggleGenieBot → send /start.
-
-☁️ Deployment (24/7 Free Hosting)
-
-Because the bot uses long polling, you can deploy it easily on:
-
-✅ Railway.app (recommended)
-
-Free
-
-24/7 uptime
-
-Easiest deployment
-
-Other options:
-
-Render
-
-Replit
-
-VPS (Ubuntu)
-
-Railway Steps:
-
-Push your project to GitHub
-
-Create a Railway project
-
-Add environment variable:
-
-TELEGRAM_TOKEN = your_token
-
-
-Set start command:
-
-node index.js
-
-
-Deploy — done! 🎉
-
-🤝 Contributing
-
-Contributions are welcome!
-Feel free to submit issues, suggestions, or pull requests.
-
-📜 License
-
-This project is open-source and available under the MIT License.
-
-⭐ Show Support
-
-If you liked this bot, give the repo a ⭐ on GitHub — it helps a lot!
-
-If you want, I can also create:
-
-🔥 A badge section (npm, license, version)
-🔥 Workflow diagrams
-🔥 A bot logo
-🔥 A “Deploy to Railway” button for your README
-
-Just tell me — I’ll generate it!
-
-You said:
-but read me suppors markdwon text
-ChatGPT said:
-
-Yes — and the README I gave you IS already 100% Markdown.
-GitHub supports headings (#), lists, code blocks, emojis, links, tables — all Markdown.
-
-But if you want a strict, clean Markdown-only README (no fancy formatting), here is the final pure-Markdown README.md for your GiggleGenieBot.
-
-Just copy → paste → save as README.md.
-This is fully GitHub-compatible.
-
-GiggleGenieBot
-
-GiggleGenieBot is a fun Telegram bot that delivers jokes, programming humor, dark jokes, cat facts, insults, and motivational quotes using Node.js.
-
-Telegram Bot Link: https://t.me/GiggleGenieBot
-
-Features
-Jokes
-
-/joke – Get a clean random joke
-
-/darkjoke – Dark humor joke
-
-/programmingjoke – Developer joke
-
-Fun
-
-/catfact – Random cat fact
-
-/insult – Funny, light-hearted roast
-
-Inspiration
-
-/quote – Random motivational quote
-
-Utility
-
-/start – Welcome message
-
-/help – List of all commands
-
-How It Works (Long Polling Workflow)
-
-User sends a command (example: /joke).
-
-Telegram stores the message on its servers.
-
-Bot continuously sends requests to Telegram API using long polling:
-
-GET https://api.telegram.org/bot<token>/getUpdates
-
-
-Telegram responds when there is a new message.
-
-Bot checks which command the user sent.
-
-Bot calls the required public API (jokes, quotes, facts, insults).
-
-Bot formats and sends the reply back to the user.
-
-This cycle repeats continuously.
-
-Tech Stack
-
-Node.js
-
-node-telegram-bot-api
-
-axios
-
-dotenv
-
-Public APIs:
-
-Official Joke API
-
-JokeAPI.dev
-
-CatFact API
-
-Quotable API
-
-EvilInsult API
-
-Project Structure
-GiggleGenieBot/
-│
-├── index.js          # Main bot logic
-├── package.json      
-├── .env              # Stores TELEGRAM_TOKEN (not committed)
-├── .gitignore        
+├── index.js            # Main bot code
+├── package.json
+├── .env                # Contains TELEGRAM_TOKEN (ignored by git)
+├── .gitignore
 └── README.md
+```
 
-Installation
-1. Clone the repository
-git clone https://github.com/vinayreddy938/GiggleGenieBot
+---
+
+## ⚙️ Setup & Installation
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/vinayreddy938/GiggleGenieBot.git
 cd GiggleGenieBot
+```
 
-2. Install dependencies
+### 2️⃣ Install Dependencies
+
+```bash
 npm install
+```
 
-3. Create a .env file
+### 3️⃣ Create `.env` File
+
+```
 TELEGRAM_TOKEN=your_telegram_bot_token_here
+```
 
-4. Run the bot
+### 4️⃣ Run the Bot
+
+```bash
 node index.js
+```
 
+Open Telegram → search **@GiggleGenieBot** → send `/start`.
 
-Open Telegram and send /start to your bot.
+---
 
-Deployment (Free Options)
+## ☁️ Deployment (Free Hosting – 24/7)
 
-Because long polling does not require HTTPS or webhooks, you can deploy anywhere:
+Because long polling doesn’t need webhooks, you can deploy anywhere.
 
-Recommended: Railway.app
+### ✅ **Railway (Recommended)**
 
-Steps:
+Free  
+Easy  
+24/7 uptime  
 
-Push your project to GitHub
+### Steps:
 
-Create a new Railway project
+1. Push your project to GitHub  
+2. Create a **Railway project**  
+3. Add Environment Variable:
 
-Add environment variable:
-
+```
 TELEGRAM_TOKEN=your_token
+```
 
+4. Set start command:
 
-Set start command:
-
+```
 node index.js
+```
+
+5. Deploy — Done 🎉
+
+### Other Hosting Options
+- Render  
+- Replit  
+- VPS (Ubuntu)  
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!  
+Feel free to submit Issues, PRs, or suggestions.
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## ⭐ Support
+
+If you liked this bot, please ⭐ the GitHub repo — it helps a lot!
