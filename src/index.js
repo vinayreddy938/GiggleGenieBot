@@ -4,6 +4,18 @@ const axios = require("axios");
 
 const TOKEN = process.env.TELEGRAM_TOKEN;
 const bot = new TelegramBot(TOKEN, { polling: true });
+bot.on('message', (msg) => {
+    const text = msg.text;
+
+   
+    if (text.startsWith('/')) return;
+
+   
+    bot.sendMessage(
+        msg.chat.id,
+        "😅 I didn’t understand that!\nTry /help to see all my commands."
+    );
+});
 
 bot.onText(/\/start/, (msg) => {
     bot.sendMessage(
