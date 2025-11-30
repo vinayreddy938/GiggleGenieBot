@@ -155,12 +155,7 @@ node index.js
 
 5. Deploy — Done 🎉
 
-### Other Hosting Options
-- Render  
-- Replit  
-- VPS (Ubuntu)  
 
----
 
 ## 🤝 Contributing
 
